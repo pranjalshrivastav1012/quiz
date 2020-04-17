@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class QuestionSix extends AppCompatActivity {
+public class QuestionEight extends AppCompatActivity {
 
     TextView tv, mQuestionNo, mQuestion;
     Button mB1, mB2, mB3, mB4;
@@ -17,13 +17,13 @@ public class QuestionSix extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.question_six);
+        setContentView(R.layout.question_eight);
 
-        tv = (TextView)findViewById(R.id.score_6);
-        mB1 = (Button)findViewById(R.id.btn1_q6);
-        mB2 = (Button)findViewById(R.id.btn2_q6);
-        mB3 = (Button)findViewById(R.id.btn3_q6);
-        mB4 = (Button)findViewById(R.id.btn4_q6);
+        tv = (TextView)findViewById(R.id.score_8);
+        mB1 = (Button)findViewById(R.id.btn1_q8);
+        mB2 = (Button)findViewById(R.id.btn2_q8);
+        mB3 = (Button)findViewById(R.id.btn3_q8);
+        mB4 = (Button)findViewById(R.id.btn4_q8);
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score",0);
@@ -34,7 +34,7 @@ public class QuestionSix extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startQuestionSeven(0);
+                startQuestionNine(1);
 
             }
         });
@@ -42,7 +42,7 @@ public class QuestionSix extends AppCompatActivity {
         mB2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startQuestionSeven(0);
+                startQuestionNine(0);
             }
         });
 
@@ -51,7 +51,7 @@ public class QuestionSix extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startQuestionSeven(1);
+                startQuestionNine(0);
             }
         });
 
@@ -59,16 +59,16 @@ public class QuestionSix extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startQuestionSeven(0);
+                startQuestionNine(0);
             }
         });
     }
 
 
-    private void startQuestionSeven (int scr){
-        Intent intent6 = new Intent(this,QuestionSeven.class);
-        intent6.putExtra("score", scr+ score);
-        startActivity(intent6);
+    private void startQuestionNine (int scr){
+        Intent intent8 = new Intent(this,QuestionNine.class);
+        intent8.putExtra("score", scr+ score);
+        startActivity(intent8);
 
 
 

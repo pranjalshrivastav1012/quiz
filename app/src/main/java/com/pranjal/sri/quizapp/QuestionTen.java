@@ -1,6 +1,7 @@
 package com.pranjal.sri.quizapp;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,41 +9,43 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class QuestionSix extends AppCompatActivity {
+public class QuestionTen extends AppCompatActivity {
 
     TextView tv, mQuestionNo, mQuestion;
-    Button mB1, mB2, mB3, mB4;
+    Button mPlay, mB2, mB3, mB4;
     int score = 0;
+    MediaPlayer mySong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.question_six);
+        setContentView(R.layout.question_ten);
 
-        tv = (TextView)findViewById(R.id.score_6);
-        mB1 = (Button)findViewById(R.id.btn1_q6);
-        mB2 = (Button)findViewById(R.id.btn2_q6);
-        mB3 = (Button)findViewById(R.id.btn3_q6);
-        mB4 = (Button)findViewById(R.id.btn4_q6);
+        tv = (TextView)findViewById(R.id.score_10);
+        mySong = MediaPlayer.create(QuestionTen.this,R.raw.letmedown);
+        mPlay = (Button)findViewById(R.id.Play_it);
+        mB2 = (Button)findViewById(R.id.btn2_q10);
+        mB3 = (Button)findViewById(R.id.btn3_q10);
+        mB4 = (Button)findViewById(R.id.btn4_q10);
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score",0);
         tv.setText("score:" + score);
 
-
-        mB1.setOnClickListener(new View.OnClickListener() {
+        mPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startQuestionSeven(0);
-
+                mySong.start();
             }
         });
+
+
 
         mB2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startQuestionSeven(0);
+                startFinalClass(0);
             }
         });
 
@@ -51,7 +54,7 @@ public class QuestionSix extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startQuestionSeven(1);
+                startFinalClass(1);
             }
         });
 
@@ -59,19 +62,19 @@ public class QuestionSix extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startQuestionSeven(0);
+                startFinalClass(0);
             }
         });
     }
 
 
-    private void startQuestionSeven (int scr){
-        Intent intent6 = new Intent(this,QuestionSeven.class);
-        intent6.putExtra("score", scr+ score);
-        startActivity(intent6);
+    private void startFinalClass (int scr){
+        Intent intent10 = new Intent(this,FinalClass.class);
+        intent10.putExtra("score", scr+ score);
+        startActivity(intent10);
+
+    }
 
 
 
-
-
-    }}
+}
