@@ -20,36 +20,18 @@ public class FinalClass extends AppCompatActivity {
 
         tv = (TextView) findViewById(R.id.Final_score);
 
-
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
 
-
         if (score > 0 && score <= 3) {
-            tv.setText("Ah! Its bit low"+"Score : " + score );
-
-
-        if (score > 3 && score <= 7) {
-            tv.setText("Congratulations! your score is"+"Score : " + score );}
-
-
-
-        if (score>7&& score<=9){
-            tv.setText("Congratulations! your score is"+"Score : " + score );}
-
-        if(score==10){
-            tv.setText("Congratulations! Your score is"+"Score : " + score );}
-
-
-
+            tv.setText("Ah! Its bit low" + "Score : " + score);
+        } else if (score > 3 && score <= 7) {
+            tv.setText("Congratulations! Your score is"+"Score : " + score );
+        } else if (score>7&& score<=9) {
+            tv.setText("Congratulations! Your score is"+"Score : " + score );
+        } else {
+            tv.setText("Congratulations! Your score is"+"Score : " + score );
         }
-
-
-        }
-
-
-
-
-
     }
+}
 
