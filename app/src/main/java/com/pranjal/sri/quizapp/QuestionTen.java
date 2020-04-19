@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class QuestionTen extends AppCompatActivity {
 
-    TextView tv, mQuestionNo, mQuestion;
-    Button mPlay, mB2, mB3, mB4;
+    TextView  mQuestionNo, mQuestion;
+    Button mPlay,mPause, mB2, mB3, mB4;
     int score = 0;
     MediaPlayer mySong;
 
@@ -21,22 +21,33 @@ public class QuestionTen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_ten);
 
-        tv = (TextView)findViewById(R.id.score_10);
+
         mySong = MediaPlayer.create(QuestionTen.this,R.raw.letmedown);
         mPlay = (Button)findViewById(R.id.Play_it);
+        mPause = (Button)findViewById(R.id.Pause_it);
         mB2 = (Button)findViewById(R.id.btn2_q10);
         mB3 = (Button)findViewById(R.id.btn3_q10);
         mB4 = (Button)findViewById(R.id.btn4_q10);
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score",0);
-        tv.setText("score:" + score);
+
 
         mPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 mySong.start();
+            }
+
+
+        });
+
+
+        mPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mySong.pause();
             }
         });
 
@@ -75,6 +86,12 @@ public class QuestionTen extends AppCompatActivity {
 
     }
 
+     @Override
+    protected void onPause(){
+        super.onPause();
+        mySong.release();
+
+     }
 
 
 }

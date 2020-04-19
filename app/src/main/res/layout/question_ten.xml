@@ -27,25 +27,43 @@
         android:id="@+id/question_10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
         android:text="Guess the name of the song ?"
+        android:textColor="@android:color/white"
         android:textSize="20dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:textColor="@android:color/white"/>
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/Play_it"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Press to hear the tune"
-        android:onClick="PlayIt"
-        android:textAllCaps="false"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/custom_button"/>
+        android:layout_height="167dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/Play_it"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/custom_button2"
+            android:onClick="PlayIt"
+            android:text="Play"
+
+            />
+        <Button
+            android:id="@+id/Pause_it"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/custom_button2"
+            android:onClick="Pauseit"
+            android:text="Pause" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn2_q10"
@@ -62,7 +80,7 @@
         android:id="@+id/btn3_q10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="We don't talk anymore"
+        android:text="Don't let me down"
         android:textAllCaps="false"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
@@ -73,7 +91,7 @@
         android:id="@+id/btn4_q10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Dharia"
+        android:text="Sugar n Brownies"
         android:textAllCaps="false"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"

@@ -23,9 +23,33 @@ public class FinalClass extends AppCompatActivity {
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
-        tv.setText("Score : " + score);
+
+
+        if (score > 0 && score <= 3) {
+            tv.setText("Ah! Its bit low"+"Score : " + score );
+
+
+        if (score > 3 && score <= 7) {
+            tv.setText("Congratulations! your score is"+"Score : " + score );}
+
+
+
+        if (score>7&& score<=9){
+            tv.setText("Congratulations! your score is"+"Score : " + score );}
+
+        if(score==10){
+            tv.setText("Congratulations! Your score is"+"Score : " + score );}
+
+
+
+        }
+
+
+        }
+
+
 
 
 
     }
-}
+
