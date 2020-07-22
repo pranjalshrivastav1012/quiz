@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class QuestionFour extends AppCompatActivity {
 
-    TextView tv, mQuestionNo, mQuestion;
+    TextView  mQuestionNo, mQuestion;
     Button mB1, mB2, mB3, mB4;
     int score = 0;
 
@@ -19,7 +19,6 @@ public class QuestionFour extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_four);
 
-        tv = (TextView) findViewById(R.id.score_4);
         mB1 = (Button) findViewById(R.id.btn1_q4);
         mB2 = (Button) findViewById(R.id.btn2_q4);
         mB3 = (Button) findViewById(R.id.btn3_q4);
@@ -28,7 +27,6 @@ public class QuestionFour extends AppCompatActivity {
 
         Intent intent = getIntent();
         score = intent.getIntExtra("score", 0);
-        tv.setText("score:" + score);
 
         mB1.setOnClickListener(new View.OnClickListener() {
             @Override

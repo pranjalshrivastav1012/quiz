@@ -6,4 +6,5 @@
     <color name= "Backgroundcolor">#0D2A42</color>
     <color name = "questionnocolor">#326280</color>
     <color name = "Buttonbackground">#F0A3FF</color>
+    <color name = "finalscorecolor">#173280</color>
 </resources>

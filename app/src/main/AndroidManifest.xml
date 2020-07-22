@@ -16,6 +16,12 @@
         <activity android:name=".QuestionFour"></activity>
         <activity android:name=".QuestionFive"></activity>
         <activity android:name=".QuestionSix"></activity>
+        <activity android:name=".QuestionSeven"></activity>
+        <activity android:name=".QuestionEight"></activity>
+        <activity android:name=".QuestionNine"></activity>
+        <activity android:name=".QuestionTen"></activity>
+        <activity android:name=".FinalClass"></activity>
+
 
         <activity android:name=".MainActivity">
             <intent-filter>

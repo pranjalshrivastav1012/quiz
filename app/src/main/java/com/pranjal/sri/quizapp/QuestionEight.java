@@ -8,30 +8,32 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class QuestionOne extends AppCompatActivity {
+public class QuestionEight extends AppCompatActivity {
 
-    TextView getmQuestionNo1, mQuestion ;
+    TextView mQuestionNo, mQuestion;
     Button mB1, mB2, mB3, mB4;
     int score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.question_one);
+        setContentView(R.layout.question_eight);
 
 
-        mB1 = (Button)findViewById(R.id.btn1_q1);
-        mB2 = (Button)findViewById(R.id.btn2_q1);
-        mB3 = (Button)findViewById(R.id.btn3_q1);
-        mB4 = (Button)findViewById(R.id.btn4_q1);
+        mB1 = (Button)findViewById(R.id.btn1_q8);
+        mB2 = (Button)findViewById(R.id.btn2_q8);
+        mB3 = (Button)findViewById(R.id.btn3_q8);
+        mB4 = (Button)findViewById(R.id.btn4_q8);
+
         Intent intent = getIntent();
-        score = intent.getIntExtra("score", 0);
+        score = intent.getIntExtra("score",0);
 
 
         mB1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startQuestionTwo(1);
+
+                startQuestionNine(1);
 
             }
         });
@@ -39,38 +41,36 @@ public class QuestionOne extends AppCompatActivity {
         mB2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                startQuestionTwo(0);
-
+                startQuestionNine(0);
             }
         });
+
 
         mB3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startQuestionTwo(0);
-
+                startQuestionNine(0);
             }
         });
-
 
         mB4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startQuestionTwo(0);
+                startQuestionNine(0);
             }
         });
-
-
-
     }
 
-    private void startQuestionTwo(int scr){
-        Intent intent1 = new Intent(this, QuestionTwo.class);
-        intent1.putExtra("score", scr+score);
-        startActivity(intent1);
-    }
-}
 
+    private void startQuestionNine (int scr){
+        Intent intent8 = new Intent(this,QuestionNine.class);
+        intent8.putExtra("score", scr+ score);
+        startActivity(intent8);
+
+
+
+
+
+    }}
